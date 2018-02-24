@@ -1,0 +1,195 @@
+
+/* * {
+   outline: 1px solid red !important;
+  } */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    /* max-width: 100%; */
+    min-height: 680px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #02b3e4;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+/* 元素永远不会成为鼠标事件的target */
+.disabled { pointer-events: none; }
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+.score-panel .timer {
+  display: inline-block;
+  margin-left: 8%; }
+.score-panel .mov {
+  display: inline-block;
+  margin-left: 8%; }
+
+.score-panel .timer span {
+  font-weight: 600; }
+
+.result {
+  /* width: 500px; */
+  max-width: 100%;
+  height: 500px;
+  margin: -150px auto 0;
+  text-align: center;
+  position: relative;
+  top: 50%; }
+
+.rewon {
+  font-size: 30px;
+  font-weight: 600; }
+
+.removes {
+  color: gray;
+  font-size: 22px; }
+.woo {
+  color: gray;
+  font-size: 22px; }
+
+.rebutton {
+  background-color: #0ed0a5;
+  border-radius: 5px;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 40px;
+  margin: 0 auto; }
+
+/* 为平板做微调 */
+@media screen and (max-width: 768px) {
+.deck {
+    width: 400px;
+    /* max-width: 100%; */
+    min-height: 420px;
+    padding: 28px; }
+
+.deck .card {
+    height: 70px;
+    width: 70px;
+    /* max-width: 100%; */
+     }
+   }
+  /* 为手机做微调 */
+@media screen and (max-width: 414px) {
+.deck {
+    width: 380px;
+    min-height: 400px;
+    padding: 25px;
+  }
+
+.deck .card {
+    height: 70px;
+    width: 70px;
+    }
+.score-panel {
+        font-size: 18px;
+        text-align: left;
+        width: 350px;
+        margin-bottom: 10px;
+    }
+
+.score-panel .restart {
+        font-size: 25px;
+    }
+}
